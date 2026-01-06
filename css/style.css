@@ -5,13 +5,7 @@
 @font-face {
     font-family: Android;
     font-weight: normal;
-    src: url(/src/fontes/idroid.otf) format(opentype);
-}
-
-@media (max-width: 435px) {
-    nav {
-        font-size: 0.8em;
-    }
+    src: url(../fontes/idroid.otf) format(opentype);
 }
 
 :root {
@@ -23,8 +17,8 @@
     --cor5: #063d1e;
 
     --fonte-padrao: Arial, Verdana, Helvetica, Sans-serif;
-    --fonte-destaque: Bebas Neue, cursive;
-    --fonte-android: Android, cursive;
+    --fonte-destaque: "Bebas Neue", cursive;
+    --fonte-android: "Android", cursive;
 }
 
 * {
@@ -63,9 +57,9 @@ header > p {
 
 nav {
     background-color: var(--cor4);
-    margin-top: 50px;
     padding: 5px;
-    text-align: left;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
 nav > a {
@@ -73,12 +67,14 @@ nav > a {
     text-decoration: none;
     font: bold 1em var(--fonte-padrao);
     padding: 5px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    transition: all 0.3s;
 }
 
 nav > a:hover {
     background-color: var(--cor1);
     color: var(--cor5);
-    transition: 0.3s;
 } 
 
 main {
@@ -127,10 +123,6 @@ main a:hover {
     color: var(--cor5);
 }
 
-main a:active {
-    color: var(--cor3);
-}
-
 main a::after {
     content: "🔗";
 }
@@ -148,6 +140,7 @@ main .img-pequena {
 main #video {
     background-color: var(--cor4);
     padding: 10px;
+    border-radius: 10px;
 }
 
 iframe {
@@ -170,11 +163,11 @@ aside h3 {
 }
 
 aside ol {
+    padding: 5px;
     list-style: inside;
     list-style-type: "\1F9C1\0020";
     columns: 2;
     background-color: #fff;
-    padding: 10px;
     border-radius: 10px;
 }
 
@@ -195,12 +188,23 @@ aside a {
 footer {
     background-color: var(--cor5);
     color: #fff;
-    font: italic normal 1em var(--fonte-padrao);
     text-align: center;
-    padding: 5px;
+    padding: 8px;
 }
 
 footer a {
     text-decoration: none;
     color: #fff;
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: var(--cor1);
+}
+
+
+@media (width >= 600px) {
+    nav {
+        text-align: right;
+    }
 }
