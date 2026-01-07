@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: Android;
-    font-weight: normal;
+    font-weight: 500;
     src: url(../fontes/idroid.otf) format(opentype);
 }
 
@@ -27,7 +27,7 @@
 }
 
 body {
-    font: normal 1em var(--fonte-padrao);
+    font: normal 1rem var(--fonte-padrao);
     background-color: var(--cor0);
 }
 
@@ -50,7 +50,6 @@ header > h1 {
 header > p {
     max-width: 500px;
     text-shadow: 1px 1px 5px #000000c6;
-    font: normal 1.2em var(--fonte-padrao);
     margin: auto;
     padding: 0px 10px 50px 10px;
 }
@@ -58,14 +57,13 @@ header > p {
 nav {
     background-color: var(--cor4);
     padding: 5px;
-    text-align: center;
-    font-size: 0.9rem;
+    text-align: right;
 }
 
 nav > a {
     color: #fff;
     text-decoration: none;
-    font: bold 1em var(--fonte-padrao);
+    font-weight: 600;
     padding: 5px 10px;
     margin: 5px;
     border-radius: 10px;
@@ -86,23 +84,20 @@ main {
     border-radius: 0px 0px 10px 10px;
 }
 
-main h1 {
+main h1, main h2 {
     font-family: var(--fonte-android);
     margin: 20px 0px;
     color: var(--cor4);
 }
 
-main h2 {
-    font-family: var(--fonte-android);
-    margin: 20px 0px;
-    color: var(--cor4);
+main h2, main a {
     background-image: linear-gradient(90deg, var(--cor1) 10%, var(--cor0)50%, #fff);
     padding: 2px 5px;
 }
 
 main p {
     text-align: justify;
-    text-indent: 40px;
+    text-indent: 1.2rem;
     line-height: 1.5em;
     margin: 20px 0px;
 }
@@ -113,14 +108,12 @@ main strong {
 
 main a {
     text-decoration: none;
-    color: var(--cor4);
-    font: bold 1em var(--fonte-padrao);
-    background-image: linear-gradient(90deg, var(--cor1) 10%, var(--cor0)50%, #fff);
-    padding: 2px 5px;
+    color: var(--cor5);
+    font-weight: 600;
 }
 
 main a:hover {
-    color: var(--cor5);
+    color: var(--cor3);
 }
 
 main a::after {
@@ -203,8 +196,18 @@ footer a:hover {
 }
 
 
-@media (width >= 600px) {
+@media (width <= 600px) {
     nav {
-        text-align: right;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    main h1 {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    aside ol {
+        font-size: 0.85rem;
     }
 }
